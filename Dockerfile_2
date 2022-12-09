@@ -1,0 +1,18 @@
+# Base Image
+FROM ubuntu:16.04
+
+#Maintainer
+MAINTAINER Anand Iyer <anandiyer4@gmail.com>
+
+#Update Apt Repo
+RUN apt-get update
+
+#Install Apache packages
+RUN apt-get install apache2 -y
+
+# Specify port
+EXPOSE 80
+
+#Bring the apache Service UP
+
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
